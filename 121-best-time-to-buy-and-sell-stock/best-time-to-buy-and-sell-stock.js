@@ -8,9 +8,7 @@ var maxProfit = function (prices) {
     for (let i = 1; i < prices.length; i++) {
 
         maxProfit = Math.max(maxProfit, (prices[i] - bestBuy))
-        if (prices[i] < bestBuy) {
-            bestBuy = prices[i]
-        }
+       bestBuy=Math.min(bestBuy,prices[i])
     }
     return maxProfit
 };
