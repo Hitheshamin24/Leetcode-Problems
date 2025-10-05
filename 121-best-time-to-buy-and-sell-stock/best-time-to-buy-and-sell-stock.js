@@ -6,11 +6,11 @@ var maxProfit = function (prices) {
     let maxProfit = 0;
     let bestBuy = prices[0];
     for (let i = 1; i < prices.length; i++) {
-
-        maxProfit = Math.max(maxProfit, (prices[i] - bestBuy))
         if (prices[i] < bestBuy) {
             bestBuy = prices[i]
         }
+        maxProfit = Math.max(maxProfit, (prices[i] - bestBuy))
+
     }
     return maxProfit
 };
