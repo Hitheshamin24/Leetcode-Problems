@@ -6,11 +6,10 @@ var isPerfectSquare = function (num) {
     let left = 1 ,right = num
     while (left <= right) {
         let mid = Math.floor((left + right) / 2)
-        let square = mid * mid
-        if (square == num) {
+        if (mid * mid == num) {
             return true
         }
-        else if (square < num) {
+        else if (mid * mid  < num) {
             left = mid + 1;
         }
         else {
