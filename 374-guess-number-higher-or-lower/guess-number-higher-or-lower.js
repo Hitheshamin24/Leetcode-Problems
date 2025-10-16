@@ -15,11 +15,11 @@ var guessNumber = function (n) {
     let left = 0, right = n
     while (left <= right) {
         let mid = Math.floor((left + right) / 2)
-        let result=guess(mid)
+        let result = guess(mid)
         if (result == 0) return mid;
-        else if (result == -1) {
+        if (result == -1) {
             right = mid - 1
-        } else if(result==1) {
+        } else if (result == 1) {
             left = mid + 1
         }
     }
