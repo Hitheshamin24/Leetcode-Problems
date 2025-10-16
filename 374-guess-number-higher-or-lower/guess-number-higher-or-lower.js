@@ -19,7 +19,7 @@ var guessNumber = function (n) {
         if (result == 0) return mid;
         else if (result == -1) {
             right = mid - 1
-        } else {
+        } else if(result==1) {
             left = mid + 1
         }
     }
