@@ -3,22 +3,18 @@
  * @return {number}
  */
 var secondHighest = function(s) {
-    
-    
-    let largest=-1;
-    let secondLargest=-1;
+    let map={};
     for(let i=0;i<s.length;i++){
-        let code = s.charCodeAt(i)-48
-        if(code >=0 && code <= 9 ){ 
-        if(largest<code)
-        {
-            secondLargest=largest
-            largest=code
+        const letter=s[i]
+        if(letter>='0' && letter<='9'){
+            map[letter]=1;
         }
-        else if(largest > code && secondLargest < code ){
-            secondLargest=code;
-        }
-        }
+        
+
     }
-    return secondLargest;
+    const keys=Object.keys(map)
+    if(keys.length>=2){
+        return Number(keys[keys.length-2])
+    }
+    return -1
 };
