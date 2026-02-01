@@ -4,13 +4,13 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-  let temp={};
+  let seen={};
   for(let i=0;i<nums.length;i++){
     const need=target-nums[i];
-    if(need in temp){
-        return [temp[need],i]
+    if(need in seen){
+        return [seen[need],i]
     }
-    temp[nums[i]]=i
+    seen[nums[i]]=i
   }
 
 };
