@@ -2,20 +2,17 @@
  * @param {number} x
  * @return {number}
  */
-var reverse = function(x) {
-    let n=Math.abs(x);
-  
-    let result=0;
-    while(n>0){
-        let rem=n%10;
-        result=result*10+rem;
-        n=Math.floor(n/10);
+var reverse = function (x) {
+    let rev = 0;
+    let num = Math.abs(x)
+    while (num > 0) {
+        let rem = num % 10;
+        rev = rev * 10 + rem;
+        num = Math.floor(num / 10)
     }
-    if(x<0){
-       result= -result;
+    rev = (x < 0) ? -rev : rev;
+    if (rev < -(2 ** 31) || rev > (2 ** 31)-1) {
+        return 0
     }
-    if(result < -(2 ** 31 )|| result > (2 ** 31-1)){
-        return 0;
-    }
-    return result;
+    return rev
 };
