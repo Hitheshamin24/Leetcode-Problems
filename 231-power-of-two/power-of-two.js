@@ -2,10 +2,14 @@
  * @param {number} n
  * @return {boolean}
  */
-var isPowerOfTwo = function (n) {
-    if (n>=1 &&n != 0 && (n & (n - 1)) == 0) {
-        return true;
-    } else {
-        return false;
+var isPowerOfTwo = function(n) {
+    if((n<-(2**31)) ||(n>2**31 - 1)){
+        return -1;
     }
+    for(let i=0;2**i<=n;i++){
+        if(2**i==n){
+            return true
+        }
+    }
+    return false
 };
