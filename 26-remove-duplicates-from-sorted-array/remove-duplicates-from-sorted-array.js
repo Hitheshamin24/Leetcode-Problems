@@ -2,13 +2,15 @@
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function (nums) {
-    i=1;
-    for(let j=1;j<nums.length;j++){
-        if(nums[j]!==nums[i-1]){
-            nums[i]=nums[j];
-            i++;
+var removeDuplicates = function(nums) {
+    let x=0;
+    for(let i=0;i<nums.length;i++){
+        if(nums[x]<nums[i]){
+            x++;
+            nums[x]=nums[i]
         }
+
+
     }
-    return i;
+    return x+1;
 };
