@@ -11,7 +11,7 @@ var moveZeroes = function(nums) {
         }
 
     }
-    for(let i=j;i<nums.length;i++){
+   while(j<nums.length){
         nums[j++]=0
     }
 };
