@@ -2,10 +2,11 @@
  * @param {number[]} nums
  * @return {number}
  */
-var singleNumber = function (nums) {
-    let index = 0;
-    for (let i = 0; i < nums.length; i++) {
-        index ^=nums[i];
+var singleNumber = function(nums) {
+    let xor=0
+    for(let num of nums){
+        xor= xor ^ num
     }
-    return index
+    return xor
+
 };
