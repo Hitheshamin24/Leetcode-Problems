@@ -2,15 +2,12 @@
  * @param {number[]} nums
  * @return {number}
  */
-var missingNumber = function(nums) {
-    nums.sort((a,b)=>a-b)
-
-    if(nums[0]!=0){
-        return 0
+var missingNumber = function (nums) {
+    let n = nums.length
+    let totalSum=n*(n+1)/2
+    let arraySum=0;
+    for(let num of nums){
+        arraySum+=num
     }
-
-    for(let i=1;i<nums.length;i++){
-        if(nums[i]!=nums[i-1]+1) return nums[i-1]+1
-    }
-    return nums.length
+    return totalSum-arraySum
 };
