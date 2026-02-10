@@ -2,15 +2,15 @@
  * @param {number[]} nums
  * @return {number}
  */
-var missingNumber = function (nums) {
-    let sumArray1 = 0, sumArray2 = 0;
-    let min = nums[0];
-    for (let i = 0; i < nums.length; i++) {
-        min = Math.min(min, nums[i]);
-        sumArray1 += nums[i];
+var missingNumber = function(nums) {
+    nums.sort((a,b)=>a-b)
+
+    if(nums[0]!=0){
+        return 0
     }
-    for (let i = min; i <= nums.length; i++) {
-        sumArray2 += i;
+
+    for(let i=1;i<nums.length;i++){
+        if(nums[i]!=nums[i-1]+1) return nums[i-1]+1
     }
-    return Math.abs(sumArray1 - sumArray2)
+    return nums.length
 };
