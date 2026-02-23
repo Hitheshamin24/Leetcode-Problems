@@ -12,11 +12,10 @@
  */
 var rotateRight = function(head, k) {
     if(!head || !head.next || k==0) return head
-    let length=0
+    let length=1
     let temp=head
-    let prev=head
-    while(temp){
-        prev=temp
+    
+    while(temp.next){
         temp=temp.next
         length++
     }
@@ -31,7 +30,7 @@ var rotateRight = function(head, k) {
         stepsToNextNode--
     }
     previous.next=null
-    prev.next=head
+    temp.next=head
     return current
 
 };
