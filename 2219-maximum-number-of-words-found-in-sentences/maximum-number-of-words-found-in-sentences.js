@@ -5,7 +5,8 @@
 var mostWordsFound = function (sentences) {
     let currLength = 0;
     for (let i = 0; i < sentences.length; i++) {
-        let wordCount = sentences[i].split(" ").length;
+        let word = sentences[i].split(" ");
+        let wordCount=word.length;
         currLength = wordCount > currLength ? wordCount : currLength;
     }
     return currLength;
