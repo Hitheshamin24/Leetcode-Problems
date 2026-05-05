@@ -4,17 +4,12 @@
  * @return {number}
  */
 var search = function (nums, target) {
-    let left = 0, right = nums.length - 1;
-    while (left <= right) {
-        const mid = left + Math.floor((right - left) / 2)
-        if(nums[mid]==target){
-            return mid;
-        }
-        else if (nums[mid]>target){
-            right=mid-1
-        }else{
-            left=mid+1
-        }
+    let start = 0, end = nums.length - 1;
+    while (start <= end) {
+        let mid = Math.floor((start + end) / 2);
+        if (nums[mid] == target) return mid;
+        else if (nums[mid] > target) end = mid - 1;
+        else start = mid + 1
     }
-    return -1
+    return -1;
 };
