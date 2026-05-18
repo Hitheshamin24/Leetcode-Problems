@@ -5,7 +5,7 @@
 var checkIfPangram = function (sentence) {
     let set = new Set();
     for (let i = 0; i < sentence.length; i++) {
-        set.add(sentence[i]);
+        set.add(sentence.charAt(i));
     }
     return set.size == 26 ? true : false;
 };
