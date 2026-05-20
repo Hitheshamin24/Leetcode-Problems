@@ -8,12 +8,12 @@ var sortPeople = function (names, heights) {
     for (let i = 0; i < names.length; i++) {
         map.set(heights[i], names[i])
     }
-    heights.sort((a,b)=>a-b);
+    heights.sort((a,b)=>b-a);
   
-    let ans = []
-    for (let i = heights.length - 1; i >= 0; i--) {
-        ans.push(map.get(heights[i]))
+    for(let i=0;i<heights.length;i++){
+        names[i]=map.get(heights[i])
     }
-    return ans;
+   
+    return names;
 
 };
