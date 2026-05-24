@@ -12,10 +12,11 @@ var kthDistinct = function (arr, k) {
     for (let [key,val] of map ){
         if (val=== 1) {
             distinctCount++;
-            if (distinctCount === k) {
+            
+        }
+        if (distinctCount === k) {
                 return key;
             }
-        }
 
     }
     return "";
