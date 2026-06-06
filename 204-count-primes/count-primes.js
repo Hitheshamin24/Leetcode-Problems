@@ -14,11 +14,11 @@ var primeArray = function (n) {
     return arr
 }
 var countPrimes = function (n) {
-    
-    let arr=primeArray(n)
-    let count=0
-    for(let i=2;i<arr.length-1;i++){
-        if(arr[i]) count++
+
+    let arr = primeArray(n)
+    let count = 0
+    for (let i = 2; i < arr.length - 1; i++) {
+        if (arr[i]) count++
     }
     return count
 
