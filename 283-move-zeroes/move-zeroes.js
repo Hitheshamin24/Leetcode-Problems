@@ -9,7 +9,7 @@ var moveZeroes = function (nums) {
             nums[j++] = nums[i]
         }
     }
-    for (let i = j; i < nums.length; i++) {
-        nums[i] = 0
+    while (j < nums.length) {
+        nums[j++] = 0
     }
 };
