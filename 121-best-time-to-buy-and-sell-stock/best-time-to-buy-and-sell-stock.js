@@ -5,8 +5,13 @@
 var maxProfit = function (prices) {
     let maxProfit = 0, buying = prices[0]
     for (let i = 1; i < prices.length; i++) {
-        buying = Math.min(buying, prices[i])
-        maxProfit = Math.max(maxProfit, prices[i] - buying)
+        if (prices[i] < buying) {
+            buying = prices[i]
+        }
+        let profit = prices[i] - buying
+        if (maxProfit < profit) {
+            maxProfit = profit
+        }
     }
     return maxProfit
 };
