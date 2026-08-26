@@ -3,11 +3,14 @@
  * @return {number[]}
  */
 var sortArrayByParity = function (nums) {
-    let even = [], odd = []
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] % 2 === 0) even.push(nums[i])
-        else odd.push(nums[i])
+    let left=0
+    for (let right = 0; right < nums.length; right++) {
+       if(nums[right]%2===0){
+        [nums[right],nums[left]]=[nums[left],nums[right]]
+        left++
+       }
     }
+    return nums
 
     return even.concat(odd)
 };
