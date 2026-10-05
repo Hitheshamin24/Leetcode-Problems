@@ -9,5 +9,4 @@ var removeDuplicates = function (nums) {
         if (nums[i] !== nums[i + 1]) nums[j++] = nums[i+1]
     }
     return j
-
 };
