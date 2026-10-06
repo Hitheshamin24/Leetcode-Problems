@@ -18,9 +18,7 @@ var threeSum = function (nums) {
 
             }else if(sum<0) j++
             else k--
-
         }
-
     }
     return ans
 };
