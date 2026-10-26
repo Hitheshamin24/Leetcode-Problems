@@ -3,7 +3,15 @@
  * @return {boolean}
  */
 var containsDuplicate = function (nums) {
-    let set = new Set(nums)
-    if (set.size === nums.length) return false
-    else return true;
+    const obj = {}
+    for (let i = 0; i < nums.length; i++) {
+        obj[nums[i]] = (obj[nums[i]] || 0) + 1
+
+    }
+    for (let key in obj) {
+        if (obj[key] > 1) {
+            return true
+        }
+    }
+    return false
 };
